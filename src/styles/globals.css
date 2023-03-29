@@ -1,4 +1,25 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: #4a4a4a;
+}
+body {
+  background-color: #ffcd38;
+}
+textarea {
+  width: calc(50% - 6rem);
+  height: 50rem;
+  resize: none;
+  padding: 1rem;
+  background-color: #ffdd67;
+  box-shadow: 0.5rem 0.5rem #646464;
+}
+@media (max-width: 1024px) {
+  textarea {
+    width: 70%;
+    resize: none;
+    height: 50rem;
+    padding: 1rem;
+  }
 }
