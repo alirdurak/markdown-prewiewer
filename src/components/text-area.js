@@ -1,8 +1,8 @@
-
+import styles from "../styles/text-area.module.scss"
 export default function TextArea () {
   return (
     <>
-      <textarea  name="markdown" id="" cols="30" rows="10"></textarea>
+      <textarea className={styles.textarea}  name="markdown" id="" cols="30" rows="10"></textarea>
     </>
   );
 }
