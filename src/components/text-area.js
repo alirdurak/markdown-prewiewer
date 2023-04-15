@@ -1,19 +1,22 @@
 import styles from "../styles/text-area.module.scss"
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { changeText } from "@/redux/markdown-slice";
 
 export default function TextArea () {
+  const markdown = useSelector(state => state.markdown.text)
   const dispatch = useDispatch()
   const [text, setText] = useState("")
-
-  const handleChange =  e  => {
+useEffect(()=>{
+  dispatch(changeText(text))
+},[text])
+  const handleChange = async (e)  => {
       setText(e.target.value)
-     dispatch(changeText(text))
+     
   }
   return (
     <>
-      <textarea onChange={handleChange}  className={styles.textarea}  name="markdown" id="" cols="30" rows="10"></textarea>
+      <textarea value={markdown} onChange={handleChange}  className={styles.textarea}  name="markdown" id="" cols="30" rows="10"></textarea>
     </>
   );
 }

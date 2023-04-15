@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import sample from "../assets/sample"
+
 
 const initialState = {
   text: "",
@@ -9,16 +11,6 @@ const markdownSlice = createSlice({
   initialState,
   reducers: {
     sampleMarkdown: (state) => {
-      const sample = fetch("../assets/sample.txt")
-        .then((response) => response.text())
-        .then((data) => {
-          // Dosya içeriği burada kullanılabilir
-          return data;
-        })
-        .catch((error) => {
-          console.error("Hata:", error);
-        });
-
       state.text = sample;
     },
     changeText: (state, action) => {
