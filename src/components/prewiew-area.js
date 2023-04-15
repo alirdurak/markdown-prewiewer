@@ -1,6 +1,9 @@
 import styles from "../styles/text-area.module.scss"
+import ReactMarkdown from 'react-markdown';
+import { useSelector } from "react-redux";
 export default function PrewiewArea(){
+    const text = useSelector(state => state.markdown.text)
     return <>
-    <textarea className={styles.textarea} readOnly name="" id="" cols="30" rows="10"></textarea>    
+    <ReactMarkdown className={styles.textarea}>{text}</ReactMarkdown>   
     </>
 }
